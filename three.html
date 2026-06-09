@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        body {
+            background-color: #000;
+            color: #0f0;
+            font-family: 'Courier New', Courier, monospace;
+            padding: 40px;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+        .container {
+            border: 1px solid #0f0;
+            padding: 20px;
+            box-shadow: 0 0 10px #0f0;
+            max-width: 600px;
+        }
+        h1 { border-bottom: 1px dashed #0f0; padding-bottom: 10px; }
+        a { 
+            color: #0f0; 
+            text-decoration: none; 
+            margin-top: 20px; 
+            display: block;
+            border: 1px solid #0f0;
+            padding: 5px;
+            width: fit-content;
+        }
+        a:hover { background: #0f0; color: #000; }
+        
+        .typewriter { overflow: hidden; white-space: nowrap; border-right: .15em solid #0f0; animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite; }
+        @keyframes typing { from { width: 0 } to { width: 100% } }
+        @keyframes blink-caret { from, to { border-color: transparent } 50% { border-color: #0f0 } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>[3 - ИНСТРУМЕНТЫ]</h1>
+        <p class="typewriter">> НАШ КОД И РАЗРАБОТКИ:</p>
+        <p class="typewriter">> - ОСНОВНОЙ РЕПОЗИТОРИЙ NOVAXDEV</p>
+        <p class="typewriter">> - УТИЛИТЫ ДЛЯ МОНИТОРИНГА ПК</p>
+        <p class="typewriter">> - РАЗНЫЕ МОДЫ И СКРИПТЫ</p>
+        <p class="typewriter">> - ИГРЫ</p>
+        <p class="typewriter">> - ПРИЛОЖЕНИЯ</p>
+        <br>
+        <a href="terminal.html">> ВЕРНУТЬСЯ_В_МЕНЮ</a>
+    </div>
+
+    <script>
+        setInterval(() => {
+            if(Math.random() > 0.99) {
+                document.body.style.opacity = 0.5;
+                setTimeout(() => document.body.style.opacity = 1, 50);
+            }
+        }, 1000);
+    </script>
+</body>
+</html>

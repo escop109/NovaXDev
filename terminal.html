@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>NOVA TERMINAL</title>
+    <style>
+        /* Дизайн прямо в файле */
+        body {
+            background-color: #000;
+            color: #0f0;
+            font-family: 'Courier New', Courier, monospace;
+            padding: 20px;
+            margin: 0;
+        }
+        .line { margin: 5px 0; }
+        input {
+            background: transparent;
+            border: none;
+            color: #0f0;
+            font-family: inherit;
+            font-size: 1rem;
+            outline: none;
+            width: 50%;
+        }
+    </style>
+</head>
+<body>
+    <div class="line">> СИСТЕМА ЗАГРУЖЕНА.</div>
+    <div class="line">> 1-О_НАС | 2-ПРОЕКТЫ | 3-ИНСТРУМЕНТЫ | 4-КОНТАКТЫ | 5-ВЫХОД</div>
+    <div class="line">
+        root@novax:~$ <input type="text" id="cmd" autofocus>
+    </div>
+
+    <script>
+        document.getElementById('cmd').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                const map = {
+                    '1':'one.html', 
+                    '2':'two.html', 
+                    '3':'three.html', 
+                    '4':'four.html', 
+                    '5':'five.html'
+                };
+                if (map[this.value]) {
+                    window.location.href = map[this.value];
+                } else {
+                    // Если команда не найдена
+                    const div = document.createElement('div');
+                    div.className = 'line';
+                    div.innerHTML = '> ОШИБКА: Команда не найдена.';
+                    document.body.appendChild(div);
+                    this.value = '';
+                }
+            }
+        });
+    </script>
+</body>
+</html>
